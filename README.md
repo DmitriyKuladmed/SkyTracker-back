@@ -21,19 +21,7 @@
 
 1. Убедитесь, что Docker установлен на вашей машине.
 
-2. Создайте файл `.env` в корневом каталоге проекта для конфигурации базы данных. Пример содержания:
-
-    ```env
-    APP_ID=9c6a500132fd69ee6ab45142b7de969b
-    WEATHER_URL=https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=9c6a500132fd69ee6ab45142b7de969b
-    SECRET_KEY=django-insecure-m-%r)xxmtdo7dsrhq&^xj)8!of5%$8um(-h)*e44rddwb!thfc
-    
-    DB_NAME=weather
-    DB_USER=postgres
-    DB_PASSWORD=admin2004
-    DB_HOST=db
-    DB_PORT=5432
-    ```
+2. В данном случае для быстрого запуска файл .env уже создан и находиться в проекте.
 
 3. Запустите Docker Compose для создания и запуска всех контейнеров:
 
