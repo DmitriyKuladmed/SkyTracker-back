@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: weatherApp
+      dockerfile: Dockerfile
+    image: back
+    container_name: backend-container
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    command: |
+        sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+
+  db:
+    image: postgres:15
+    container_name: postgres-container
+    restart: always
+    environment:
+      - POSTGRES_DB=weather
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin2004
+
+    ports:
+      - "5432:5432"
